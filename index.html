@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Exercicio 02</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body onload="main()">
+    <h1>Calcular Média do Aluno</h1>
+
+    <select id="language" onChange="update()">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </select>
+        <input type="text" id="value">
+        <input type="text" id="text">
+<script type="text/javascript">
+ var nome = prompt("Qual seu nome: ");
+ var materia = prompt("Nome da materia ");
+ var alunos =  parseInt(prompt("Numero de notas:   "));
+ var vetor = new Array(alunos);
+
+ // Preenchendo o veotr
+ for(let count=0; count<alunos; count++)
+  vetor[count] = parseInt( prompt("Nota " + (count+1) + ":") )
+ 
+
+ // Somando todos os elementos
+ var soma=0;
+ for(let count in vetor)
+  soma += vetor[count];
+
+ var media = soma/alunos;
+ document.write("Média de nota:   " + media);
+ document.write("  Nome do Aluno:   " + nome);
+ document.write("  Nome da materia:  " + materia);
+ alert(media,nome,materia)
+</script>
+<script type="text/javascript">
+    
+     if(media >= 7)
+      if(media==10)
+       alert("Uau! Aprovado com distin��o");
+      else
+       alert("Parabens, aprovado! Media "+media);
+     else
+      alert("Reprovado!")
+
+</script>
+        <script type="text/javascript">
+            function update() {
+                var select = document.getElementById('language');
+                var option = select.options[select.selectedIndex];
+
+                document.getElementById('value').value = option.value;
+                document.getElementById('text').value = option.text;
+            }
+
+            update();
+        </script>
+</select>
+
+    <h2>Aluno Participantes</h2>
+    <h3>Lista de Chamada</h3>
+    <input type="text" id="aluno" />
+    <button onclick="adicionar()">Adicionar Nome dos alunos</button>
+    <br>
+    <ul id="lista">
+    <li>Joao</li>
+    <li>Felipe</li>
+    <li>lara</li>
+    <li>Otavio</li>
+    </ul>
+
+    <h3>Materias Lecionadas</h3>
+    <textarea type="text" id="materias" rows="6" cols="50"></textarea>
+    <br>
+    <button onclick="materia()">Adicionar materias</button>
+    <p id="paragrafo">Matematica.</p>
+
+    <script type="text/javascript" src="main.js">
+    </script>
+    
+  
+</body>
+</html>
